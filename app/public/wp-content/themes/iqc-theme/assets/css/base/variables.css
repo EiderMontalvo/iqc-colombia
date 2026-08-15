@@ -1,0 +1,36 @@
+/*iQC Theme Design Tokens * Archivo: assets/css/base/variables.css * * Centraliza todos los custom properties del tema. * Modificar aqui afecta a todo el sitio.*/
+
+:root {
+    /*color Palette*/
+    --color-primary: #0019D2;
+    --color-secondary: #000000;
+    --color-accent: var(--wp--preset--color--iqc-accent, #6A2B70);
+    --color-surface: var(--wp--preset--color--iqc-surface, #FFFFFF);
+    --color-surface-alt: var(--wp--preset--color--iqc-surface-alt, #F7F8FA);
+    --color-surface-dark: #1A1A2E;
+    --color-text: var(--wp--preset--color--iqc-text, #1A1A2E);
+    --color-text-muted: var(--wp--preset--color--iqc-text-muted, #5A6480);
+    --color-border: var(--wp--preset--color--iqc-border, #E2E6EF);
+
+    /*typography*/
+    --font-family-base: var(--wp--preset--font-family--inter, 'Inter', system-ui, sans-serif);
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+
+    /*spacing Scale*/
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-14: 3.5rem;
+    --space-16: 4rem;
+
+    /*layout*/
+    --container-max: 1200px;
+    --container-padding: clamp(1rem, 4vw, 2rem);
+}

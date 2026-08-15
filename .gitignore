@@ -1,0 +1,10 @@
+#ignorar temas por defecto
+app/public/wp-content/themes/twentytwenty*
+app/public/wp-content/themes/index.php
+
+#varios
+.DS_Store
+*.log
+.env
+.env.*
+node_modules/

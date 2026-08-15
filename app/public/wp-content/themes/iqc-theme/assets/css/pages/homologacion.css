@@ -1,0 +1,121 @@
+/*iQC Theme - Homologacion Page * Archivo: assets/css/pages/homologacion.css*/
+
+/*hero*/
+.iqc-hero--homologacion {
+    background-image: url('../../img/homologacion/iqc-homologacion-background.webp');
+    background-position: center 30%;
+}
+
+/*qU ES Y NECESIDAD*/
+.iqc-homologacion-intro {
+    padding-block: var(--space-12) var(--space-6);
+    background-color: var(--color-surface);
+}
+
+.iqc-homologacion-intro__section {
+    text-align: center;
+    margin-bottom: var(--space-12);
+}
+
+.iqc-homologacion-intro__title {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 800;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    margin: 0 0 var(--space-4);
+    letter-spacing: -0.01em;
+}
+
+.iqc-homologacion-intro__subtitle {
+    font-size: 1rem;
+    color: var(--color-text);
+    font-weight: 600;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/*cuadricula de beneficios / Necesidad*/
+.iqc-homologacion-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.iqc-homologacion-feature {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.iqc-homologacion-feature__icon {
+    width: 80px;
+    height: 80px;
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iqc-homologacion-feature__icon svg {
+    width: 100%;
+    height: 100%;
+    stroke-width: 1.5;
+}
+
+.iqc-homologacion-feature__text {
+    font-size: 0.85rem;
+    color: var(--color-text);
+    line-height: 1.6;
+    text-align: justify;
+    text-align-last: center;
+    margin: 0;
+}
+
+/*formularioULARIO DE COTIZACIÓN*/
+.iqc-homologacion-cotizacion {
+    padding: var(--space-12) 0;
+    background-color: var(--color-primary); /*azul IQC, igual que en Contactoo*/
+}
+
+.iqc-homologacion-cotizacion__wrapper {
+    max-width: 700px; /*reducido para que no se vea muy ancho en Escritorio*/
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 16px; /*igual que en Contactoo*/
+    padding: var(--space-8);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12); /*sombra igual que en Contactoo*/
+}
+
+.iqc-homologacion-cotizacion__title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    text-align: left;
+    margin: 0 0 var(--space-6);
+}
+
+
+/*rESPONSIVE*/
+@media (max-width: 900px) {
+    .iqc-homologacion-features {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 600px) {
+    .iqc-homologacion-cotizacion__wrapper {
+        padding: var(--space-6) var(--space-4);
+    }
+    
+}
+
+/*formularioULARIO SPECIFIC STYLES*/

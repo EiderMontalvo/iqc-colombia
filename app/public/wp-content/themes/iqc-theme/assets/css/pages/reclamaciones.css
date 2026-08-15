@@ -1,0 +1,128 @@
+/*iQC Theme - Libro de Reclamaciones Page * Archivo: assets/css/pages/reclamaciones.css*/
+
+/*hero*/
+.iqc-hero--reclamaciones {
+    background-image: url('../../img/reclamaciones/iqc-libro-reclamacion-background.webp');
+    background-position: center center;
+}
+
+.iqc-hero--reclamaciones .iqc-hero__overlay {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/*rECLAMACIONES Seccion*/
+.iqc-reclamaciones-section {
+    padding-block: var(--space-12);
+    background-color: var(--color-surface);
+}
+
+.iqc-reclamaciones-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--space-10);
+}
+
+.iqc-reclamaciones-intro__title {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 800;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    margin: 0 0 var(--space-4);
+    letter-spacing: -0.01em;
+}
+
+.iqc-reclamaciones-intro__text {
+    font-size: 1rem;
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+.iqc-reclamaciones-form__wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 16px;
+    padding: var(--space-8);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+}
+
+.iqc-reclamaciones-form__heading {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    margin: 0 0 var(--space-6);
+    text-align: left;
+}
+
+.iqc-reclamaciones-book-id {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f4f6f9;
+    padding: var(--space-3) var(--space-4);
+    border-radius: 8px;
+    margin-bottom: var(--space-6);
+    border: 1px dashed var(--color-border);
+}
+
+.iqc-reclamaciones-book-id span {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+}
+
+.iqc-reclamaciones-book-id strong {
+    font-size: 1.1rem;
+    color: var(--color-primary);
+}
+
+/*select specific styling matching inputs*/
+.iqc-form__select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: var(--color-surface-alt);
+    border: 1.5px solid var(--color-border);
+    border-radius: 8px;
+    color: var(--color-text);
+    font-size: 0.92rem;
+    font-family: var(--font-family-base);
+    transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+}
+
+.iqc-form__select:focus {
+    border-color: var(--color-primary);
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(0, 25, 210, 0.1);
+}
+
+/*movil ONLY WIZARD*/
+#iqc-reclamaciones-form:not(.is-submitted) .iqc-form-step {
+    display: block;
+}
+@media (max-width: 600px) {
+    #iqc-reclamaciones-form:not(.is-submitted) .iqc-form-step {
+        display: none;
+    }
+    #iqc-reclamaciones-form:not(.is-submitted) .iqc-form-step.active {
+        display: block;
+    }
+}
+
+/*rESPONSIVE*/
+@media (max-width: 600px) {
+    .iqc-reclamaciones-section {
+        padding-block: var(--space-8);
+    }
+
+    .iqc-reclamaciones-form__wrapper {
+        padding: var(--space-6) var(--space-5);
+    }
+}

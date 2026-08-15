@@ -1,0 +1,173 @@
+﻿/*â”€â”€â”€ testimonios Seccion â”€â”€â”€*/
+.iqc-testimonials {
+    padding-block: var(--space-16) var(--space-12);
+    /*ajustado para dar respiro debajo de los puntos*/
+    background-color: var(--color-surface);
+    overflow: hidden;
+}
+
+.iqc-section-eyebrow {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-primary);
+    margin: 0 0 var(--space-3);
+}
+
+/*stats Fila*/
+.iqc-testimonials__stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+    margin-block: var(--space-10) var(--space-14);
+    padding: var(--space-6) 0;
+    background: transparent;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.iqc-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    text-align: center;
+}
+
+.iqc-stat__number {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 800;
+    color: var(--color-primary);
+    line-height: 1;
+}
+
+.iqc-stat__label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/*testimonial Cuadricula (Horizontal Carrusel)*/
+.iqc-testimonials__grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: var(--space-6);
+    padding-bottom: var(--space-8);
+    scrollbar-width: none;
+    /*firefox*/
+}
+
+.iqc-testimonials__grid::-webkit-scrollbar {
+    display: none;
+    /*chrome/Safari*/
+}
+
+.iqc-testimonial-card {
+    flex: 0 0 min(85vw, 400px);
+    scroll-snap-align: center;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/*testimonial Pagination*/
+.iqc-testimonials__pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    /*usamos un margen negativo para subir los puntos al espacio libre que deja el Relleno-Inferior del Cuadricula (que sirve para no cortar la sombra de las tarjetas)*/
+    margin-top: calc(var(--space-6) * -1);
+    margin-bottom: var(--space-4);
+    position: relative;
+    z-index: 10;
+}
+
+.iqc-testimonials__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--color-border);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.iqc-testimonials__dot.is-active {
+    background-color: var(--color-primary);
+    transform: scale(1.2);
+}
+
+.iqc-testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 25, 210, 0.1);
+}
+
+.iqc-testimonial-card__stars {
+    display: flex;
+    gap: 2px;
+    color: #f59e0b;
+}
+
+.iqc-testimonial-card__quote {
+    margin: 0;
+    flex-grow: 1;
+}
+
+.iqc-testimonial-card__quote p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin: 0;
+    font-style: italic;
+}
+
+.iqc-testimonial-card__author {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-4);
+}
+
+.iqc-testimonial-card__avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #0012a0 100%);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.iqc-testimonial-card__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.iqc-testimonial-card__name {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.iqc-testimonial-card__role {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+}
+

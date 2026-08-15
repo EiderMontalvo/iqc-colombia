@@ -1,0 +1,360 @@
+/*iQC Theme - Formularios Component (Shared) * Archivo: assets/css/components/Formularios.css * * Estilos compartidos para TODOS los Formularioularios del sitio: * Contactoo, Homologación, Libro de Reclamaciones.*/
+
+/*bASE Formulario*/
+.iqc-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+/*fila*/
+.iqc-form__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+}
+
+/*gROUP*/
+.iqc-form__group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+/*lABEL*/
+.iqc-form__label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.iqc-form__label span {
+    color: #c0392b;
+}
+
+/*iNPUTS & TextoAREA*/
+.iqc-form__input,
+.iqc-form__textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: var(--color-surface-alt);
+    border: 1.5px solid var(--color-border);
+    border-radius: 8px;
+    color: var(--color-text);
+    font-size: 0.92rem;
+    font-family: var(--font-family-base);
+    transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+}
+
+.iqc-form__input::placeholder,
+.iqc-form__textarea::placeholder {
+    color: var(--color-text-muted);
+    opacity: 0.6;
+}
+
+.iqc-form__input:focus,
+.iqc-form__textarea:focus {
+    border-color: var(--color-primary);
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(0, 25, 210, 0.1);
+}
+
+.iqc-form__input:user-valid,
+.iqc-form__textarea:user-valid {
+    border-color: #27ae60;
+}
+
+.iqc-form__input:user-invalid,
+.iqc-form__textarea:user-invalid {
+    border-color: #e74c3c;
+}
+
+.iqc-form__textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+/*pie de pagina*/
+.iqc-form__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    margin-top: var(--space-2);
+}
+
+.iqc-form__footer--right {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: var(--space-4);
+}
+
+.iqc-form__footer--split {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--space-4);
+}
+
+.iqc-form__required-note {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+/*botonS*/
+.iqc-form__submit,
+.iqc-form__prev,
+.iqc-form__next {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    background-color: var(--color-primary);
+    color: #fff;
+    border-color: var(--color-primary);
+    font-weight: 700;
+    padding: 0.75rem 1.75rem;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.iqc-form__prev {
+    background: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+
+.iqc-form__submit {
+    margin-left: auto;
+}
+
+.iqc-form__submit:hover:not(:disabled) {
+    background-color: #fff;
+    color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.iqc-form__submit:hover:not(:disabled) svg {
+    stroke: var(--color-primary);
+}
+
+.iqc-form__submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/*sTATUS MESSAGE*/
+.iqc-form__status {
+    padding: var(--space-3) var(--space-4);
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    display: none;
+}
+
+.iqc-form__status--success {
+    display: block;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.iqc-form__status--error {
+    display: block;
+    background-color: rgba(231, 76, 60, 0.1);
+    border: 1px solid rgba(231, 76, 60, 0.4);
+    color: #c0392b;
+    text-align: center;
+    padding: var(--space-4);
+}
+
+/*aNIMATED CHECKMARK*/
+.iqc-success-animation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    padding: var(--space-6);
+}
+
+.iqc-checkmark {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2.5;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    box-shadow: inset 0px 0px 0px var(--color-primary);
+    animation: iqc-fill .4s ease-in-out .4s forwards, iqc-scale .3s ease-in-out .9s both;
+}
+
+.iqc-checkmark__circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2.5;
+    stroke-miterlimit: 10;
+    stroke: var(--color-primary);
+    fill: none;
+    animation: iqc-stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.iqc-checkmark__check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: iqc-stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes iqc-stroke {
+    100% { stroke-dashoffset: 0; }
+}
+
+@keyframes iqc-scale {
+    0%, 100% { transform: none; }
+    50% { transform: scale3d(1.1, 1.1, 1); }
+}
+
+@keyframes iqc-fill {
+    100% { box-shadow: inset 0px 0px 0px 40px var(--color-primary); }
+}
+
+/*pasoPER*/
+.iqc-form-stepper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-8);
+    position: relative;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.iqc-stepper-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    z-index: 2;
+    flex: 1;
+}
+
+.iqc-stepper-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f1f3f8;
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    border: 2px solid var(--color-border);
+    transition: all 0.3s ease;
+}
+
+.iqc-stepper-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-text-muted);
+}
+
+.iqc-stepper-item.active .iqc-stepper-circle,
+.iqc-stepper-item.completed .iqc-stepper-circle {
+    background-color: var(--color-primary);
+    color: #fff;
+    border-color: var(--color-primary);
+}
+
+.iqc-stepper-item.active .iqc-stepper-label {
+    color: var(--color-primary);
+}
+
+.iqc-stepper-line {
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-border);
+    margin: 0 -15px;
+    margin-top: -24px;
+    z-index: 1;
+}
+
+/*hONEYPOT (campo trampa antibot inVisible para humanos)*/
+.iqc-form__honeypot {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/*movil ONLY WIZARD*/
+@media (min-width: 601px) {
+    .iqc-mobile-only {
+        display: none !important;
+    }
+}
+
+/*rESPONSIVE*/
+@media (max-width: 600px) {
+    .iqc-form__row {
+        grid-template-columns: 1fr;
+    }
+
+    .iqc-form__footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .iqc-form__footer--split {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--space-3);
+        width: 100%;
+    }
+
+    .iqc-form__footer--split .iqc-btn {
+        flex: 1;
+        width: auto;
+        padding: 0.75rem 0.5rem;
+        text-align: center;
+        justify-content: center;
+        font-size: 0.85rem;
+    }
+
+    .iqc-form__submit,
+    .iqc-form__next {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/*vISIBILIDAD DE PASOS (PasoPER)*/
+/*en móvil (<=600px), el CSS inicial oculta los pasos y muestra solo el activo. Luego JS controla la visibilidad mediante inline styles (Mostrar: block/none).*/
+@media (max-width: 600px) {
+    form:not(.is-submitted) .iqc-form-step {
+        display: none;
+    }
+    form:not(.is-submitted) .iqc-form-step.active {
+        display: block;
+    }
+}
+
+/*en Escritorio (>600px), forzamos a que TODOS los pasos sean Visibles. El !important asegura que ignoramos cualquier style="Mostrar: none;" que tenga el HTML o que inyecte JS.*/
+@media (min-width: 601px) {
+    form:not(.is-submitted) .iqc-form-step {
+        display: block !important;
+    }
+}

@@ -1,0 +1,401 @@
+/*single Certificación Page Styles*/
+
+/*1. hero Seccion*/
+.iqc-cert-hero {
+    position: relative;
+    padding: clamp(var(--space-8), 12vw, var(--space-12)) 0 clamp(var(--space-6), 8vw, var(--space-8));
+    color: var(--color-surface);
+    overflow: hidden;
+    background-color: var(--color-primary);
+}
+
+.iqc-cert-hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.iqc-cert-hero__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*gradient overlay*/
+.iqc-cert-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(16, 24, 60, 0.9) 0%, rgba(200, 30, 45, 0.7) 100%);
+    z-index: 1;
+}
+
+.iqc-cert-hero__content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.iqc-cert-hero__title {
+    color: var(--color-surface);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: var(--space-2);
+    text-transform: uppercase;
+}
+
+.iqc-cert-hero__subtitle {
+    font-size: clamp(1.25rem, 3vw, 2rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: var(--space-4);
+    border-bottom: 2px solid var(--color-surface);
+    padding-bottom: var(--space-2);
+    display: inline-block;
+}
+
+/*2. ¿qué es? Seccion*/
+.iqc-cert-intro {
+    padding: var(--space-8) 0;
+    text-align: center;
+    background-color: var(--color-surface);
+}
+
+.iqc-cert-intro__title {
+    color: var(--color-primary);
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: var(--space-4);
+}
+
+.iqc-cert-intro__content {
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--color-text);
+    font-size: var(--font-size-base, 1rem);
+    line-height: 1.6;
+}
+
+/*3. ¿por qué certificarse? Seccion*/
+.iqc-cert-why {
+    padding: var(--space-8) 0;
+    background-color: var(--color-surface-alt);
+    position: relative;
+    overflow: hidden;
+}
+
+.iqc-cert-why__title {
+    text-align: center;
+    color: var(--color-primary);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: var(--space-10);
+    position: relative;
+    z-index: 2;
+    letter-spacing: -0.02em;
+}
+
+/*watermark Fondo*/
+.iqc-cert-why::before,
+.iqc-cert-why::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background-image: url('../../img/global/iqc-logo-watermark.svg'); /*need to ensure this exists or use a placeholder*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.05;
+    z-index: 1;
+}
+
+.iqc-cert-why::before {
+    top: -50px;
+    left: -100px;
+}
+
+.iqc-cert-why::after {
+    bottom: -50px;
+    right: -100px;
+}
+
+.iqc-cert-why__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--space-3);
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 767px) {
+    .iqc-cert-why__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.iqc-cert-why__card {
+    background-color: transparent;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.iqc-cert-why__card-header {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    padding: var(--space-2) var(--space-3);
+    border-radius: 6px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.iqc-cert-why__card-header:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 25, 210, 0.15);
+}
+
+.iqc-cert-why__card-title {
+    font-size: 0.95rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0;
+    color: var(--color-surface);
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+}
+
+.iqc-cert-why__card-body {
+    padding: 0 var(--space-2);
+}
+
+.iqc-cert-why__card-desc {
+    font-size: 0.95rem;
+    color: var(--color-primary);
+    margin: 0;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+/*4. requisitos Seccion*/
+.iqc-cert-reqs {
+    padding: var(--space-8) 0;
+    background-color: var(--color-surface);
+}
+
+.iqc-cert-reqs__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .iqc-cert-reqs__grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.iqc-cert-reqs__image-col {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.iqc-cert-reqs__hexagon {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background-color: var(--color-primary);
+    padding: 8px; /*borde thickness*/
+}
+
+.iqc-cert-reqs__hexagon-inner {
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.iqc-cert-reqs__hexagon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.iqc-cert-reqs__title {
+    color: var(--color-primary);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: var(--space-6);
+}/*compact Requirements Cuadricula*/
+.iqc-cert-req-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .iqc-cert-req-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .iqc-cert-req-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-6);
+    }
+}
+
+.iqc-cert-req-card {
+    background-color: var(--color-surface-alt);
+    border-radius: 8px;
+    padding: var(--space-4);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-top: 3px solid var(--color-primary);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.iqc-cert-req-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 25, 210, 0.1);
+}
+
+.iqc-cert-req-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    color: var(--color-primary);
+    margin-top: 2px;
+}
+
+.iqc-cert-req-text {
+    font-size: var(--font-size-sm, 0.875rem);
+    color: var(--color-text);
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.iqc-form__input--rounded {
+    border-radius: 50px;
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+    margin-bottom: var(--space-3);
+    border: 1px solid var(--color-border);
+}
+
+textarea.iqc-form__input--rounded {
+    border-radius: 20px;
+}
+
+
+
+/*5. ¿qué obtengo? Seccion*/
+.iqc-cert-benefits {
+    padding: var(--space-8) 0;
+    background-color: var(--color-surface-alt);
+}
+
+.iqc-cert-benefits__title {
+    text-align: center;
+    color: var(--color-primary);
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: var(--space-8);
+}
+
+.iqc-cert-benefits__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .iqc-cert-benefits__grid {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+.iqc-cert-benefits__icon-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.iqc-cert-benefits__icon {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    color: var(--color-primary);
+}
+
+.iqc-cert-benefits__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.iqc-cert-benefits__list-item {
+    position: relative;
+    padding-left: var(--space-4);
+    margin-bottom: var(--space-4);
+    font-size: var(--font-size-base, 1rem);
+    color: var(--color-text);
+}
+
+.iqc-cert-benefits__list-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+}
+
+/*6. formulario Seccion*/
+.iqc-cert-form-section {
+    padding: var(--space-12) 0;
+    background-color: var(--color-surface);
+}
+
+.iqc-cert-form-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: var(--space-6);
+    box-shadow: var(--shadow-md);
+}
+
+.iqc-cert-form__title {
+    text-align: center;
+    color: var(--color-text);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: var(--space-6);
+}

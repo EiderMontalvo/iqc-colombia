@@ -1,0 +1,614 @@
+
+/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• pÃGINA NOSOTROS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+
+/*â”€â”€â”€ nOSOTROS Hero â”€â”€â”€*/
+/*nOSOTROS Hero: el tamano y Mostrar lo hereda de components/Hero.css*/
+.iqc-nosotros-hero {
+    background-image: url('../../img/nosotros/iqc-nosotros-background.webp');
+    background-position: center;
+}
+
+.iqc-nosotros-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.45) 0%,
+        rgba(0, 25, 210, 0.55) 100%
+    );
+    z-index: 1;
+}
+
+.iqc-nosotros-hero__inner {
+    position: relative;
+    z-index: 2;
+    padding-top: var(--space-12);
+    padding-bottom: 0;
+    width: 100%;
+}
+
+
+
+/*tab Navegacion inside Hero*/
+.iqc-nosotros-nav {
+    display: flex;
+    gap: 0;
+    flex-wrap: wrap;
+    border-bottom: none;
+}
+
+.iqc-nosotros-nav__link {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-3) var(--space-6);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    border-radius: 4px 4px 0 0;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    margin-right: 2px;
+}
+
+.iqc-nosotros-nav__link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.iqc-nosotros-nav__link--active {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+/*â”€â”€â”€ qUIÃ‰NES SOMOS â”€â”€â”€*/
+.iqc-nosotros-quienes {
+    padding-block: var(--space-12) var(--space-10);
+    background-color: var(--color-surface);
+    overflow: hidden;
+}
+
+.iqc-nosotros-quienes__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+    align-items: center;
+}
+
+.iqc-nosotros-quienes__label {
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--color-primary);
+    margin: 0 0 var(--space-6);
+    line-height: 1.15;
+}
+
+.iqc-nosotros-quienes__body {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    margin: 0 0 var(--space-4);
+}
+
+.iqc-nosotros-quienes__body:last-child {
+    margin-bottom: 0;
+}
+
+.iqc-nosotros-quienes__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iqc-nosotros-quienes__img {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    display: block;
+}
+
+/*â”€â”€â”€ mISIÃ“N VISIÃ“N VALORES â”€â”€â”€*/
+.iqc-nosotros-mvv {
+    padding-block: var(--space-12);
+    background-color: var(--color-surface-alt);
+    overflow: hidden;
+}
+
+.iqc-mvv__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+}
+
+.iqc-mvv__card {
+    background-color: var(--color-surface);
+    border-radius: 12px;
+    padding: var(--space-8) var(--space-6);
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.iqc-mvv__card.is-visible {
+    opacity: 1;
+    translate: 0 0;
+}
+
+.iqc-mvv__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 25, 210, 0.1);
+}
+
+.iqc-mvv__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: rgba(0, 25, 210, 0.08);
+    color: var(--color-primary);
+    margin: 0 auto var(--space-4);
+}
+
+.iqc-mvv__icon svg {
+    width: 26px;
+    height: 26px;
+}
+
+.iqc-mvv__label {
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin: 0 0 var(--space-3);
+}
+
+.iqc-mvv__body {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+/*â”€â”€â”€ nUESTRAS POLÃTICAS â”€â”€â”€*/
+.iqc-nosotros-politicas {
+    position: relative;
+    padding-block: 0;
+    line-height: 0; /*evita espacio extra bajo la Imagenn*/
+}
+
+.iqc-nosotros-politicas__full-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.iqc-nosotros-politicas__item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-5);
+    background-color: var(--color-surface-alt);
+    border-left: 4px solid var(--color-primary);
+    border-radius: 0 6px 6px 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--color-text);
+    cursor: default;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    /*animacion*/
+    opacity: 0;
+    translate: 0 20px;
+    transition: opacity 0.5s ease, translate 0.5s ease, background-color 0.2s ease;
+    transition-delay: var(--delay, 0s);
+}
+
+.iqc-nosotros-politicas__item.is-visible {
+    opacity: 1;
+    translate: 0 0;
+}
+
+.iqc-nosotros-politicas__item:hover {
+    background-color: rgba(0, 25, 210, 0.05);
+    border-color: #0013a0;
+}
+
+.iqc-nosotros-politicas__arrow {
+    flex-shrink: 0;
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+}
+
+/*â”€â”€â”€ nUESTROS LOGROS â”€â”€â”€*/
+.iqc-nosotros-logros {
+    padding-block: var(--space-12);
+    background-color: var(--color-surface-alt);
+    overflow: hidden;
+}
+
+.iqc-nosotros-logros__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+    align-items: center;
+}
+
+.iqc-nosotros-logros__title {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: var(--color-text);
+    margin: 0 0 var(--space-5);
+    text-transform: uppercase;
+}
+
+.iqc-nosotros-logros__body {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+.iqc-nosotros-logros__image {
+    display: flex;
+    justify-content: center;
+}
+
+.iqc-nosotros-logros__img {
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    display: block;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• rESPONSIVE â€” NOSOTROS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+
+/*tablet*/
+@media (max-width: 900px) {
+    .iqc-mvv__grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .iqc-nosotros-politicas__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .iqc-nosotros-politicas__image {
+        height: 280px;
+    }
+
+    .iqc-nosotros-quienes__grid,
+    .iqc-nosotros-logros__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+
+    .iqc-nosotros-quienes__image {
+        order: -1;
+    }
+}
+
+/*movil*/
+@media (max-width: 600px) {
+    .iqc-nosotros-hero {
+        /*hero Alto inherited from components/Hero.css*/
+        padding-block: var(--space-6);
+    }
+
+
+
+    .iqc-nosotros-nav__link {
+        padding: var(--space-2) var(--space-4);
+        font-size: 0.75rem;
+    }
+
+    .iqc-mvv__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+
+    .iqc-nosotros-politicas__image {
+        height: 220px;
+    }
+
+    .iqc-nosotros-politicas__item {
+        font-size: 0.78rem;
+    }
+
+    .iqc-nosotros-logros__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+}
+
+/*â”€â”€â”€ aCREDITADORAS â”€â”€â”€*/
+.iqc-nosotros-acreditadoras {
+    padding-block: var(--space-12);
+    background-color: var(--color-surface);
+    overflow: hidden;
+}
+
+.iqc-nosotros-acreditadoras__title {
+    text-align: center;
+    margin-bottom: var(--space-10);
+}
+
+.iqc-acreditadoras__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-10);
+}
+
+.iqc-acreditadora__card {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: var(--space-8);
+    align-items: flex-start;
+    padding: var(--space-8);
+    background-color: var(--color-surface-alt);
+    border-radius: 12px;
+    border-left: 4px solid var(--color-primary);
+    transition: opacity 0.6s ease, translate 0.6s ease;
+    transition-delay: var(--delay, 0s);
+}
+
+.iqc-acreditadora__card.is-visible {
+    opacity: 1;
+    translate: 0 0;
+}
+
+.iqc-acreditadora__logo-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-4);
+    background-color: var(--color-surface);
+    border-radius: 8px;
+    min-height: 90px;
+}
+
+.iqc-acreditadora__logo {
+    max-width: 100%;
+    height: auto;
+    max-height: 70px;
+    object-fit: contain;
+    display: block;
+}
+
+.iqc-acreditadora__text {
+    font-size: 0.92rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    margin: 0 0 var(--space-4);
+}
+
+.iqc-acreditadora__normas {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+.iqc-acreditadora__norma-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    background-color: var(--color-primary);
+    color: #fff;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+/*â”€â”€â”€ cLIENTES â”€â”€â”€*/
+.iqc-nosotros-clientes {
+    padding-block: var(--space-12);
+    background-color: var(--color-surface-alt);
+    overflow: hidden;
+}
+
+.iqc-clientes__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+}
+
+/*tarjeta de cliente (nuevo diseÃ±o con nombre + certs)*/
+.iqc-cliente__card {
+    background-color: var(--color-surface);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.iqc-cliente__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+}
+
+.iqc-cliente__img-wrap {
+    overflow: hidden;
+}
+
+.iqc-cliente__img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.iqc-cliente__card:hover .iqc-cliente__img {
+    transform: scale(1.04);
+}
+
+.iqc-cliente__info {
+    padding: var(--space-4) var(--space-5);
+    flex: 1;
+}
+
+.iqc-cliente__nombre {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin: 0 0 var(--space-3);
+    text-align: center;
+}
+
+.iqc-cliente__certs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-4);
+    justify-content: center;
+}
+
+.iqc-cliente__cert {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+.iqc-cliente__cert svg {
+    color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+/*limpiar estilos viejos de figure que ya no se usan*/
+.iqc-cliente__figure { display: none; }
+
+/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• rESPONSIVE â€” Acreditadoras & Clientes â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+
+/*â”€â”€ tablet (â‰¤ 900px) â”€â”€*/
+@media (max-width: 900px) {
+    /*acreditadoras: Logotipo arriba, Textoo abajo*/
+    .iqc-acreditadora__card {
+        grid-template-columns: 120px 1fr;
+        gap: var(--space-5);
+        padding: var(--space-6);
+    }
+
+    /*clientes: 2 Columnaas*/
+    .iqc-clientes__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/*â”€â”€ movil (â‰¤ 768px) â”€â”€*/
+@media (max-width: 768px) {
+
+    /*kill all Animacions on Movil to guarantee zero horizontal Desplazamiento bugs*/
+    .iqc-animate-fade-right,
+    .iqc-animate-fade-left,
+    .iqc-animate-fade-up {
+        transform: none !important;
+        opacity: 1 !important;
+        transition: none !important;
+    }
+
+    /*mVV â€” carrusel horizontal*/
+    .iqc-mvv__grid {
+        display: flex !important;
+        flex-direction: row !important;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        gap: var(--space-4);
+        padding-bottom: var(--space-4);
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        max-width: 100%;
+    }
+    .iqc-mvv__grid::-webkit-scrollbar { display: none; }
+
+    .iqc-mvv__card {
+        flex: 0 0 78vw;
+        max-width: 300px;
+        scroll-snap-align: center;
+    }
+
+    /*acreditadoras â€” layout vertical compacto*/
+    .iqc-acreditadora__card {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+        padding: var(--space-5) var(--space-4);
+    }
+
+    .iqc-acreditadora__logo-wrap {
+        max-width: 110px;
+        min-height: 70px;
+        margin: 0 auto;
+    }
+
+    .iqc-acreditadora__text {
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+
+    /*clientes â€” carrusel horizontal*/
+    .iqc-nosotros-clientes .iqc-container {
+        padding-inline: var(--space-4);
+    }
+
+    .iqc-clientes__grid {
+        display: flex !important;
+        flex-direction: row !important;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        gap: var(--space-4);
+        padding-bottom: var(--space-4);
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        max-width: 100%;
+    }
+    .iqc-clientes__grid::-webkit-scrollbar { display: none; }
+
+    .iqc-cliente__card {
+        flex: 0 0 76vw;
+        max-width: 280px;
+        scroll-snap-align: center;
+    }
+
+    .iqc-cliente__img {
+        height: 180px;
+    }
+
+    .iqc-cliente__nombre {
+        font-size: 0.8rem;
+    }
+
+    .iqc-cliente__cert {
+        font-size: 0.72rem;
+    }
+}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•

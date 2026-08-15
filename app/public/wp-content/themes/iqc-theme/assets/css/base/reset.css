@@ -1,0 +1,40 @@
+﻿/*iQC Theme - Global Reset * Archivo: assets/css/base/reset.css * * NOTA IMPORTANTE: Desbordamiento-x: clip en <html> y <body> es la * solucion mas robusta para evitar Desplazamiento horizontal en iOS Safari * sin crear un nuevo stacking conTexto que romperia Posicion: Pegajoso.*/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: clip;
+    max-width: 100%;
+    width: 100%;
+}
+
+body {
+    overflow-x: clip;
+    max-width: 100%;
+    width: 100%;
+    font-family: var(--font-family-base);
+    color: var(--color-text);
+    background-color: var(--color-surface);
+    margin: 0;
+    padding: 0;
+}
+
+.site-main {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
+/*kill Desplazamiento-triggering Transformarulario Animacions on Movil. * translateX() en elementos fuera del viewport causa Desplazamiento horizontal. * Se aplican en TODOS los breakpoints menores a 992px para ser conservadores.*/
+@media (max-width: 992px) {
+    .iqc-animate-fade-right,
+    .iqc-animate-fade-left {
+        transform: none !important;
+        opacity: 1 !important;
+        transition: none !important;
+    }
+}

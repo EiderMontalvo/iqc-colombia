@@ -1,0 +1,212 @@
+/*iQC Theme - Actualizaciones Page * Archivo: assets/css/pages/actualizaciones.css*/
+
+/*hero*/
+.iqc-hero--actualizaciones {
+    background-image: url('../../img/actualizaciones/iqc-actualizaciones-background.webp');
+    background-position: center center;
+}
+
+
+
+/*cONTENIDO DE ACTUALIZACIONES*/
+.iqc-actualizaciones-content {
+    padding-block: var(--space-12) var(--space-16);
+}
+
+/*cABECERA (INTRO)*/
+.iqc-actualizaciones-header {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto var(--space-12);
+}
+
+.iqc-actualizaciones-title {
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    font-weight: 800;
+    color: var(--color-text);
+    line-height: 1.4;
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+/*cONTROLES DE LA TABLA*/
+.iqc-table-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-4);
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    flex-wrap: wrap;
+    gap: var(--space-4);
+}
+
+.iqc-table-controls label {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.iqc-table-select {
+    padding: 0.3rem 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    font-family: inherit;
+    font-size: 0.9rem;
+    outline: none;
+    cursor: pointer;
+}
+
+.iqc-table-search {
+    padding: 0.4rem 0.6rem;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    font-family: inherit;
+    font-size: 0.9rem;
+    outline: none;
+    width: 200px;
+    transition: border-color 0.2s ease;
+}
+
+.iqc-table-search:focus {
+    border-color: var(--color-primary);
+}
+
+/*tABLA DE DATOS*/
+.iqc-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    background-color: var(--color-surface);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    margin-bottom: var(--space-6);
+}
+
+.iqc-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+    /*force Desplazamiento on small screens*/
+    text-align: left;
+}
+
+.iqc-data-table thead {
+    background-color: var(--color-primary);
+    /*azul principal*/
+}
+
+.iqc-data-table th {
+    padding: var(--space-4) var(--space-5);
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #ffffff;
+    /*textoo blanco para contrastar*/
+    border-bottom: 2px solid var(--color-primary);
+}
+
+.iqc-data-table td {
+    padding: var(--space-5);
+    font-size: 0.9rem;
+    color: var(--color-text);
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: top;
+    line-height: 1.6;
+}
+
+.iqc-data-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.iqc-data-table tbody tr:hover {
+    background-color: rgba(0, 25, 210, 0.02);
+}
+
+/*utilidades para la tabla*/
+.iqc-text-primary {
+    color: var(--color-primary);
+}
+
+.iqc-font-bold {
+    font-weight: 800;
+}
+
+.iqc-text-muted {
+    color: var(--color-text-muted);
+}
+
+.iqc-table-empty {
+    padding: var(--space-8);
+    text-align: center;
+    color: var(--color-text-muted);
+    font-weight: 600;
+}
+
+/*pAGINACIÓN*/
+.iqc-table-pagination {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 4px;
+}
+
+.iqc-pagination-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 var(--space-2);
+    border: 1px solid var(--color-border);
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.iqc-pagination-btn:hover:not(:disabled) {
+    background-color: var(--color-surface-alt);
+    border-color: #ccc;
+}
+
+.iqc-pagination-btn.is-active {
+    border-color: var(--color-text);
+    border-width: 2px;
+    font-weight: 800;
+}
+
+.iqc-pagination-btn:disabled {
+    color: var(--color-text-muted);
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+/*rESPONSIVE*/
+@media (max-width: 768px) {
+    .iqc-actualizaciones-title {
+        font-size: 1.3rem;
+    }
+
+    .iqc-table-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .iqc-table-search {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .iqc-table-pagination {
+        justify-content: center;
+    }
+}

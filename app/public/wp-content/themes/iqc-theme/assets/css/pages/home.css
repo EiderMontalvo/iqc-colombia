@@ -1,0 +1,534 @@
+
+/*â”€â”€â”€ certificaciones Seccion â”€â”€â”€*/
+.iqc-cert-section {
+    padding-block: var(--space-12);
+    background-color: var(--color-surface-alt);
+    overflow: hidden;
+    /*contain Movil Tarjeta Carrusel*/
+}
+
+.iqc-section-header {
+    text-align: center;
+    margin-bottom: var(--space-10);
+}
+
+.iqc-section-title {
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    color: var(--color-primary);
+    margin-bottom: var(--space-2);
+}
+
+.iqc-section-subtitle {
+    font-size: 1.125rem;
+    color: #555;
+}
+
+/*cuadricula Layout*/
+.iqc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-6);
+}
+
+/*tarjeta Component*/
+.iqc-card {
+    background: var(--color-surface);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.iqc-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.iqc-card__image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    /*16:9 aspect ratio*/
+    overflow: hidden;
+    background-color: #eee;
+}
+
+.iqc-card__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.iqc-card:hover .iqc-card__image {
+    transform: scale(1.05);
+}
+
+.iqc-card__content {
+    padding: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.iqc-card__title {
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    margin: 0 0 var(--space-2);
+    font-weight: 700;
+}
+
+.iqc-card__desc {
+    color: #444;
+    line-height: 1.5;
+    margin: 0 0 var(--space-4);
+    flex-grow: 1;
+}
+
+.iqc-card__btn {
+    align-self: flex-end;
+    margin-top: auto;
+    padding: var(--space-2) var(--space-4);
+    font-size: 0.9rem;
+}
+
+/*â”€â”€â”€ movil Carrusel & HORIZONTAL TarjetaS â”€â”€â”€*/
+@media (max-width: 576px) {
+
+    /*transformarulario Cuadricula into a horizontal Desplazamientoable Deslizador*/
+    .iqc-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        /*firefox*/
+        -ms-overflow-style: none;
+        /*iE/Edge*/
+        padding-bottom: var(--space-4);
+        gap: var(--space-4);
+    }
+
+    .iqc-grid::-webkit-scrollbar {
+        display: none;
+        /*chrome/Safari*/
+    }
+
+    /*tarjetas maintain vertical layout but act as Deslizador Elementos*/
+    .iqc-card {
+        flex: 0 0 85vw;
+        /*each Tarjeta takes 85% of screen Ancho*/
+        max-width: 320px;
+        /*previene que se haga gigante*/
+        scroll-snap-align: start;
+    }
+}
+
+/*â”€â”€â”€ por que nosotros Seccion â”€â”€â”€*/
+.iqc-why-us-section {
+    padding-block: var(--space-12);
+    background-color: var(--color-surface);
+    overflow: hidden;
+}
+
+.iqc-split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-10);
+    align-items: center;
+    min-width: 0;
+    /*prevent Cuadricula from Desbordamientoing its Contenedor*/
+}
+
+.iqc-split-layout__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.iqc-brand-logo {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.iqc-split-layout__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.iqc-about-header {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.iqc-about-highlight {
+    color: var(--color-primary);
+    font-size: 1.25rem;
+    font-weight: 800;
+    line-height: 1.4;
+    text-transform: uppercase;
+    margin: 0 0 var(--space-4) 0;
+}
+
+.iqc-about-paragraph {
+    color: #666;
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/*feature Lista*/
+.iqc-feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+}
+
+.iqc-feature-item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: var(--space-4);
+}
+
+.iqc-feature-item__icon {
+    flex-shrink: 0;
+    color: var(--color-primary);
+    display: flex;
+    align-items: flex-start;
+}
+
+.iqc-feature-item__icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+
+
+.iqc-feature-item__title {
+    color: var(--color-text);
+    margin: 0 0 0.25rem 0;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.iqc-feature-item__desc {
+    margin: 0;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    font-size: 0.85rem;
+}
+
+/*desplazamiento Animacions*/
+.iqc-animate-fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.iqc-animate-fade-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.iqc-animate-fade-right {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s;
+}
+
+.iqc-animate-fade-right.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.iqc-animate-fade-left {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.8s ease-out 0.4s, transform 0.8s ease-out 0.4s;
+}
+
+.iqc-animate-fade-left.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/*responsive Split Layout*/
+@media (max-width: 992px) {
+    .iqc-split-layout {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+
+    .iqc-split-layout__image {
+        order: -1;
+        /*ensure Imagen is on Superior on Movil*/
+    }
+}
+
+@media (max-width: 768px) {
+
+    /*kill all Animacions on Movil to guarantee zero horizontal Desplazamiento bugs*/
+    .iqc-animate-fade-right,
+    .iqc-animate-fade-left,
+    .iqc-animate-fade-up {
+        transform: none !important;
+        opacity: 1 !important;
+        transition: none !important;
+    }
+
+    /*optimize Texto readability on Movil*/
+    .iqc-about-header {
+        text-align: left;
+    }
+
+    .iqc-about-highlight {
+        font-size: 1.1rem;
+    }
+
+    .iqc-about-paragraph {
+        font-size: 0.95rem;
+    }
+
+    /*force Split Layout on Movil: Logotipo Izquierda, Points Derecha*/
+    .iqc-split-layout {
+        grid-template-columns: 1fr 1fr;
+        /*2 columnas*/
+        gap: var(--space-4);
+        align-items: center;
+    }
+
+    .iqc-split-layout__image {
+        order: 0;
+        /*keep Logotipo on the Izquierda*/
+        padding: 0;
+    }
+
+    .iqc-brand-logo {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    /*hide the Descripcions on Movil*/
+    .iqc-feature-item__desc {
+        display: none !important;
+    }
+
+    /*stack features vertically on the Derecha*/
+    .iqc-feature-list {
+        grid-template-columns: 1fr;
+        gap: var(--space-2);
+    }
+
+    .iqc-feature-item {
+        gap: 6px;
+    }
+
+    .iqc-feature-item__icon svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .iqc-feature-item__title {
+        font-size: 0.85rem;
+        margin: 0;
+    }
+}
+
+/*â”€â”€â”€ acreditadoras Seccion â”€â”€â”€*/
+.iqc-accreditations {
+    overflow: hidden;
+    /*contain geometric Imagen that pops out*/
+}
+
+.iqc-accreditations__banner {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    text-align: center;
+    /*reducimos el Relleno base y el tamaÃ±o de la punta para hacerlo mÃ¡s delgado*/
+    padding-block: var(--space-3) calc(var(--space-3) + 24px);
+    position: relative;
+    z-index: 2;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 24px), 50% 100%, 0 calc(100% - 24px));
+}
+
+.iqc-accreditations__title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.iqc-accreditations__subtitle {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    opacity: 0.9;
+    letter-spacing: 1px;
+}
+
+.iqc-accreditations__layout {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: var(--space-10);
+    align-items: center;
+}
+
+/*ensure Imagen Columna clips Desbordamiento and doesn't stretch page*/
+.iqc-accreditations__image-col {
+    overflow: hidden;
+    min-width: 0;
+}
+
+.iqc-accreditations__info,
+.iqc-accreditations__image-col {
+    min-width: 0;
+    /*cRUCIAL: Prevents Flex/Cuadricula children from stretching the Columna*/
+}
+
+.iqc-accreditations__logos-wrapper {
+    margin-bottom: var(--space-8);
+    overflow: hidden;
+    overflow: clip;
+    /*prevents marquee from causing horizontal Desplazamiento on Movil*/
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    width: 100%;
+    max-width: 100%;
+}
+
+.iqc-accreditations__logos {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: var(--space-6);
+    align-items: center;
+    width: max-content;
+    /*carrusel Animacion for all devices*/
+    animation: scrollMarquee 20s linear infinite;
+}
+
+@keyframes scrollMarquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-50% - (var(--space-6) / 2)));
+    }
+}
+
+.iqc-accreditation-img {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+    max-width: 100%;
+}
+
+.iqc-accreditations__text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    /*reduced from 1.7*/
+    color: var(--color-text-muted);
+    text-align: justify;
+}
+
+/*geometric Imagen Effect*/
+.iqc-geometric-wrapper {
+    position: relative;
+    max-width: 350px;
+    margin: 0 auto;
+    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.15));
+    /*the Envoltura clips the Inferior of everything into a chevron, leaving the Superior free*/
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 92%, 0% 100%);
+    /*espacio at the Inferior so the chevron doesn't cut the person too high*/
+    padding-bottom: 2rem;
+}
+
+.iqc-geometric-shape {
+    position: absolute;
+    /*push the ribbon down so the person's head pops out the Superior*/
+    top: 20%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(145deg, var(--color-primary) 0%, #00129a 100%);
+    /*the shape has a pointy Superior*/
+    clip-path: polygon(50% 0%, 100% 15%, 100% 100%, 0% 100%, 0% 15%);
+    z-index: 1;
+}
+
+.iqc-geometric-image {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    height: auto;
+    /*no clip path on the Imagen itself! It sits naturally over the shape*/
+}
+
+/*no longer hiding duplicates since marquee is Activo everywhere*/
+.iqc-mobile-duplicate {
+    display: block;
+}
+
+@media (max-width: 992px) {
+    .iqc-accreditations__layout {
+        /*keep split layout on tablet!*/
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-6);
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .iqc-accreditations__layout {
+        /*texto on Izquierda, Imagen on Derecha for Movil*/
+        /*use 'fr' instead of '%' so Cuadricula automatically subtracts the Brecha, eliminating horizontal Desplazamiento*/
+        grid-template-columns: 5.5fr 4.5fr;
+        gap: var(--space-2);
+        /*slightly smaller Brecha to give more room*/
+        align-items: center;
+    }
+
+    .iqc-geometric-wrapper {
+        max-width: 170px;
+        /*slightly wider to balance*/
+        padding-bottom: 3.5rem;
+        /*stretches the ribbon vertically on Movil*/
+        /*adjust clip-path to keep the chevron pronounced on a taller shape*/
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 88%, 0% 100%);
+        margin: 0 auto;
+    }
+
+    .iqc-accreditations__text {
+        font-size: 0.85rem;
+        /*smaller Texto to fit narFila Columna*/
+        line-height: 1.35;
+        /*reduced vertical separation*/
+    }
+
+    .iqc-accreditation-img {
+        height: 40px;
+        /*small enough for half screen*/
+    }
+}
+
+/*â”€â”€â”€ testimonios Seccion â”€â”€â”€*/

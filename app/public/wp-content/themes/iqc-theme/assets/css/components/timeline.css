@@ -1,0 +1,58 @@
+/*iQC Theme - Timeline Component * Archivo: assets/css/components/timeline.css*/
+
+/*tIMELINE*/
+.iqc-timeline {
+    max-width: 900px;
+    margin: 0 auto var(--space-16) auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+}
+
+.iqc-timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-6);
+}
+
+.iqc-timeline-marker {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background-color: var(--color-primary);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 800;
+    box-shadow: 0 4px 12px rgba(0, 25, 210, 0.2);
+}
+
+.iqc-timeline-content {
+    flex: 1;
+    padding-top: 6px; /*alinear Texto visualmente con el centro del circulo*/
+}
+
+.iqc-timeline-content p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--color-text);
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+/*rESPONSIVE TIMELINE*/
+@media (max-width: 768px) {
+    .iqc-timeline-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: var(--space-4);
+    }
+    
+    .iqc-timeline-content {
+        padding-top: 0;
+    }
+}

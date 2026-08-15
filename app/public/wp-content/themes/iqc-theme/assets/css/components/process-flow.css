@@ -1,0 +1,257 @@
+﻿/*iQC Theme - Process Flow Component * Archivo: assets/css/components/process-flow.css * * Generic snake layout for process Pasos (Certificacion, Homologacion).*/
+
+/*diagrama de Pasos (Snake Layout)*/
+.iqc-steps-diagram {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-10) var(--space-8);
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 var(--space-10); /*prevent horizontal Desplazamiento from Absoluto connectors*/
+}
+
+/*base Elemento*/
+.iqc-step-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: var(--space-6);
+    justify-content: flex-start;
+}
+
+/*titulo*/
+.iqc-step-item__title {
+    color: var(--color-primary);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0;
+}
+
+/*texto Content Tarjeta*/
+.iqc-step-item__content {
+    background: var(--color-surface);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1.5px solid var(--color-primary);
+    padding: var(--space-4) var(--space-6);
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/*interior line connecting Tarjeta and Icono across Brecha*/
+.iqc-step-item__content::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: var(--space-6);
+    height: 2px;
+    background-color: var(--color-primary);
+    z-index: -1;
+    right: 100%; /*por defecto for Fila (Icono Izquierda, Tarjeta Derecha)*/
+}
+
+/*icono*/
+.iqc-step-item__icon-wrapper {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+}
+.iqc-step-item__icon-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/*izquierda Columna Elementos (1, 4, 5)*/
+.iqc-step-item--1, .iqc-step-item--4, .iqc-step-item--5 {
+    flex-direction: row;
+}
+/*derecha Columna Elementos (2, 3, 6) Por defectos to Fila for Movil, overridden in Escritorio media query*/
+
+/*connectors Escritorio*/
+@media (min-width: 1024px) {
+    /*explicit Cuadricula placement to Formulario the S-shape*/
+    .iqc-step-item--1 { grid-column: 1; grid-row: 1; }
+    .iqc-step-item--2 { grid-column: 2; grid-row: 1; }
+    .iqc-step-item--4 { grid-column: 1; grid-row: 2; }
+    .iqc-step-item--3 { grid-column: 2; grid-row: 2; } /*elemento 3 on Derecha, 4 on Izquierda*/
+    .iqc-step-item--5 { grid-column: 1; grid-row: 3; }
+    .iqc-step-item--6 { grid-column: 2; grid-row: 3; }
+
+    /*derecha Columna Elementos (2, 3, 6)*/
+    .iqc-step-item--2, .iqc-step-item--3, .iqc-step-item--6 {
+        flex-direction: row-reverse;
+    }
+    .iqc-step-item--2 .iqc-step-item__title, 
+    .iqc-step-item--3 .iqc-step-item__title, 
+    .iqc-step-item--6 .iqc-step-item__title {
+        text-align: right;
+    }
+    .iqc-step-item--2 .iqc-step-item__content::after,
+    .iqc-step-item--3 .iqc-step-item__content::after,
+    .iqc-step-item--6 .iqc-step-item__content::after {
+        right: auto;
+        left: 100%;
+    }
+
+    /*remove Movil connector styles on Escritorio*/
+    .iqc-step-item::before, .iqc-step-item::after {
+        content: none;
+    }
+
+    /*1 to 2 (Horizontal Derecha)*/
+    .iqc-step-item--1::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: calc(var(--space-8) * -1);
+        width: var(--space-8);
+        height: 2px;
+        background-color: var(--color-primary);
+        z-index: -1;
+    }
+
+    /*2 to 3 (Vertical curve down on the Derecha)*/
+    .iqc-step-item--2::before { 
+        content: '';
+        position: absolute;
+        top: 50%;
+        bottom: calc(var(--space-10) * -0.5);
+        right: -24px;
+        width: 24px;
+        border-top: 2px solid var(--color-primary);
+        border-right: 2px solid var(--color-primary);
+        border-top-right-radius: 8px;
+    }
+    .iqc-step-item--3::before {
+        content: '';
+        position: absolute;
+        top: calc(var(--space-10) * -0.5);
+        bottom: 50%;
+        right: -24px;
+        width: 24px;
+        border-bottom: 2px solid var(--color-primary);
+        border-right: 2px solid var(--color-primary);
+        border-bottom-right-radius: 8px;
+    }
+    
+    /*3 to 4 (Horizontal Izquierda)*/
+    .iqc-step-item--3::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: calc(var(--space-8) * -1);
+        width: var(--space-8);
+        height: 2px;
+        background-color: var(--color-primary);
+        z-index: -1;
+    }
+
+    /*4 to 5 (Vertical curve down on the Izquierda)*/
+    .iqc-step-item--4::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        bottom: calc(var(--space-10) * -0.5);
+        left: -24px;
+        width: 24px;
+        border-top: 2px solid var(--color-primary);
+        border-left: 2px solid var(--color-primary);
+        border-top-left-radius: 8px;
+    }
+    .iqc-step-item--5::before {
+        content: '';
+        position: absolute;
+        top: calc(var(--space-10) * -0.5);
+        bottom: 50%;
+        left: -24px;
+        width: 24px;
+        border-bottom: 2px solid var(--color-primary);
+        border-left: 2px solid var(--color-primary);
+        border-bottom-left-radius: 8px;
+    }
+
+    /*5 to 6 (Horizontal Derecha)*/
+    .iqc-step-item--5::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: calc(var(--space-8) * -1);
+        width: var(--space-8);
+        height: 2px;
+        background-color: var(--color-primary);
+        z-index: -1;
+    }
+
+    /*dots at the end of the connecting lines*/
+    .iqc-step-item--2 .iqc-step-item__content::before,
+    .iqc-step-item--3 .iqc-step-item__icon-wrapper::before,
+    .iqc-step-item--4 .iqc-step-item__content::before,
+    .iqc-step-item--5 .iqc-step-item__icon-wrapper::before,
+    .iqc-step-item--6 .iqc-step-item__content::before {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: var(--color-primary);
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+    }
+
+    .iqc-step-item--2 .iqc-step-item__content::before { left: -5px; }
+    .iqc-step-item--3 .iqc-step-item__icon-wrapper::before { right: -5px; }
+    .iqc-step-item--4 .iqc-step-item__content::before { right: -5px; }
+    .iqc-step-item--5 .iqc-step-item__icon-wrapper::before { left: -5px; }
+    .iqc-step-item--6 .iqc-step-item__content::before { left: -5px; }
+}
+
+/*movil fallback*/
+@media (max-width: 1023px) {
+    .iqc-steps-diagram {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+    .iqc-step-item {
+        flex-direction: row !important;
+    }
+    .iqc-step-item__title {
+        text-align: left !important;
+    }
+    
+    /*downward arFilas between Elementos (centered on Tarjetas)*/
+    .iqc-step-item:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        bottom: calc(var(--space-8) * -1);
+        left: calc(50% + 44.5px);
+        transform: translateX(-50%);
+        width: 2px;
+        height: var(--space-8);
+        background-color: var(--color-primary);
+    }
+    .iqc-step-item:not(:first-child)::before {
+        content: '';
+        position: absolute;
+        top: -12px;
+        left: calc(50% + 44.5px);
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-top: 10px solid var(--color-primary);
+    }
+}

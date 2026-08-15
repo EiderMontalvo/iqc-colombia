@@ -1,0 +1,28 @@
+/*iQC Theme - Main CSS * Archivo: assets/css/main.css * * Este archivo SOLO contiene @import. * No agregar estilos directamente aqui; usar los archivos correspondientes. * * Arquitectura: * base/ - Tokens, reset y utilidades globales * components/ - Cabecera, Pie de pagina, Hero, animaciones * pages/ - Estilos especificos por pagina*/
+
+/*bASE*/
+@import url('base/variables.css?v=5');
+@import url('base/reset.css?v=5');
+@import url('base/utilities.css?v=5');
+
+/*cOMPONENTS*/
+@import url('components/animations.css?v=5');
+@import url('components/hero.css?v=5');
+@import url('components/header.css?v=5');
+@import url('components/footer.css?v=5');
+@import url('components/forms.css?v=5');
+@import url('components/process-flow.css?v=5');
+
+/*pAGES*/
+@import url('pages/home.css?v=5');
+@import url('pages/home-testimonials.css?v=5');
+@import url('pages/nosotros.css?v=5');
+@import url('pages/contacto.css?v=5');
+@import url('pages/proceso.css?v=5');
+@import url('pages/homologacion.css?v=5');
+@import url('components/timeline.css?v=5');
+@import url('pages/apelaciones.css?v=5');
+@import url('pages/quejas.css?v=5');
+@import url('pages/actualizaciones.css?v=5');
+@import url('pages/reclamaciones.css?v=6');
+@import url('pages/single-certificacion.css?v=6');

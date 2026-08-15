@@ -1,0 +1,89 @@
+/*iQC Theme - Hero Component * Archivo: assets/css/components/Hero.css * * Tamano unificado para TODOS los Heroes del sitio. * Escritorio: 80vh | Movil: 55vh * Cualquier Hero especifico hereda estas reglas base.*/
+
+/*base Hero*/
+.iqc-hero,
+.iqc-nosotros-hero,
+.iqc-contacto-hero,
+.iqc-hero--proceso {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+    color: var(--color-surface);
+}
+
+/*escritorio: leve zoom para efecto parallax en el Hero Inicio*/
+@media (min-width: 992px) {
+    .iqc-imagen-background {
+        background-size: 110%;
+        background-position: 30% center;
+    }
+}
+
+/*movil: MISMO tamano para todos los Heroes*/
+@media (max-width: 768px) {
+
+    .iqc-hero,
+    .iqc-nosotros-hero,
+    .iqc-contacto-hero,
+    .iqc-hero--proceso {
+        min-height: 55vh;
+        padding-block: 3rem;
+    }
+
+    .iqc-hero {
+        background-position: 95% center;
+        /*corre la Imagenn a la izquierda en móvil*/
+    }
+}
+
+/*fondos especificos*/
+.iqc-imagen-background {
+    background-image: url('../../img/home/iqc-imagen-background.webp');
+}
+
+/*overlay compartido*/
+.iqc-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
+    z-index: 1;
+}
+
+/*hero Interior layout*/
+.iqc-hero__inner {
+    position: relative;
+    z-index: 3;
+}
+
+.iqc-hero__content {
+    max-width: 800px;
+}
+
+.iqc-hero__title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0 0 var(--space-4);
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+
+.iqc-hero__subtitle {
+    font-size: clamp(1.125rem, 2vw, 1.25rem);
+    line-height: 1.6;
+    margin: 0 0 var(--space-6);
+    opacity: 0.9;
+    max-width: 650px;
+}
+
+.iqc-hero__actions {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    margin-top: var(--space-4);
+}

@@ -1,0 +1,31 @@
+﻿/*iQC Theme - Desplazamiento Animacions * Archivo: assets/css/components/Animacions.css*/
+
+.iqc-animate-fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.iqc-animate-fade-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.iqc-animate-fade-right {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s;
+}
+.iqc-animate-fade-right.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.iqc-animate-fade-left {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.8s ease-out 0.4s, transform 0.8s ease-out 0.4s;
+}
+.iqc-animate-fade-left.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}

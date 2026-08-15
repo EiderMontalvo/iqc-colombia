@@ -1,0 +1,3 @@
+# wp-config.php — IQC Colombia (Local)
+# Este archivo es local. NO subir al repositorio.
+# Ver wp-config.sample.php para la plantilla de producción.

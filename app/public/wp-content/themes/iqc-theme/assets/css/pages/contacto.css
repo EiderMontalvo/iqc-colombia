@@ -1,0 +1,239 @@
+/*â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• pÃGINA ContactoO â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•*/
+
+/*â”€â”€â”€ hero â”€â”€â”€*/
+/*contactoO Hero: el tamano y Mostrar lo hereda de components/Hero.css*/
+.iqc-contacto-hero {
+    background-image: url('../../img/contacto/iqc-contactanos.webp?v=2');
+    background-position: center 30%;
+}
+
+.iqc-contacto-hero__overlay {
+    position: absolute;
+    inset: 0;
+    display: none; /*filtro oculto*/
+    z-index: 1;
+}
+
+.iqc-contacto-hero__inner {
+    position: relative;
+    z-index: 2;
+    padding-block: var(--space-12);
+}
+
+
+
+.iqc-contacto-hero__subtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    max-width: 520px;
+    line-height: 1.6;
+}
+
+/*â”€â”€â”€ informacion + MAPA â”€â”€â”€*/
+.iqc-contacto-info {
+    padding-block: var(--space-12);
+    background-color: var(--color-surface);
+}
+
+.iqc-contacto-info__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-10);
+    align-items: center;
+}
+
+.iqc-contacto-mapa {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    line-height: 0;
+}
+
+.iqc-contacto-mapa iframe {
+    width: 100%;
+    height: 360px;
+    display: block;
+    border: 0;
+}
+
+.iqc-contacto-info__heading {
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    font-weight: 800;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin: 0 0 var(--space-6);
+}
+
+.iqc-contacto-info__card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+}
+
+.iqc-contacto-info__icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: var(--color-primary);
+}
+
+.iqc-contacto-info__icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.iqc-contacto-info__card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.iqc-contacto-info__card-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+}
+
+.iqc-contacto-info__card-value {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a.iqc-contacto-info__card-value:hover {
+    color: var(--color-primary);
+}
+
+/*â”€â”€â”€ formularioULARIO â”€â”€â”€*/
+.iqc-contacto-form-section {
+    padding-block: var(--space-12);
+    background-color: #0019D2; /*azul IQC â€” igual que la referencia*/
+}
+
+.iqc-contacto-form__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: var(--space-12);
+    align-items: flex-start;
+}
+
+/*participaciÃ³n*/
+.iqc-contacto-participacion__title {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 900;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    margin: 0 0 var(--space-5);
+    line-height: 1.1;
+}
+
+.iqc-contacto-participacion__intro {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 var(--space-3);
+    font-weight: 600;
+}
+
+.iqc-contacto-participacion__body {
+    font-size: 0.92rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 var(--space-3);
+    line-height: 1.65;
+}
+
+.iqc-contacto-participacion__body--bold {
+    font-weight: 700;
+    color: #fff;
+}
+
+.iqc-contacto-participacion__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.iqc-contacto-participacion__list li {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.78);
+    padding-left: var(--space-4);
+    position: relative;
+    line-height: 1.5;
+}
+
+.iqc-contacto-participacion__list li::before {
+    content: '-';
+    position: absolute;
+    left: 0;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/*formularioulario*/
+.iqc-contacto-form__wrap {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: var(--space-8) var(--space-8);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+}
+
+.iqc-contacto-form__heading {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    margin: 0 0 var(--space-6);
+}
+
+.iqc-contacto-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+/*formularioULARIO SPECIFIC STYLES (NO COMPARTIDOS)*/
+
+/*â”€â”€â”€ rESPONSIVE ContactoO â”€â”€â”€*/
+@media (max-width: 900px) {
+    .iqc-contacto-info__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+
+    .iqc-contacto-form__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+}
+
+@media (max-width: 600px) {
+    .iqc-contacto-hero {
+        /*hero Alto inherited from components/Hero.css*/
+        padding-block: var(--space-6);
+    }
+
+    .iqc-contacto-form__wrap {
+        padding: var(--space-6) var(--space-5);
+    }
+
+
+
+    .iqc-contacto-mapa iframe {
+        height: 260px;
+    }
+}
+
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
